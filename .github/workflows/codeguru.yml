@@ -25,16 +25,14 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build project
-     
-      run: mvn compile -DskipTests
+   
 
     - name: CodeGuru Reviewer
       uses: aws-actions/codeguru-reviewer@v1.1
       
       with:          
         s3_bucket: codeguru-reviewer-mybucketnew
-        build_path: ./target/classes
+        
       env:
         AWS_DEFAULT_REGION: us-west-2
         AWS_REGION: us-west-2
